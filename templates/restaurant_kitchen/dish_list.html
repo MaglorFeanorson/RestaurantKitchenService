@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Dish list</h1>
+  {% if dish_list %}
+    <ul>
+      {% for dish in dish_list %}
+        <li><a href="{% url 'restaurant_kitchen:dish-detail' pk=dish.id %}"> {{ dish.name }} ({{ dish.dish_type }}, {{ dish.price }})</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
