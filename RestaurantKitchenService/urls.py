@@ -22,6 +22,5 @@ from restaurant_kitchen.views import index
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("restaurant_kitchen/", include("restaurant_kitchen.urls", namespace="restaurant_kitchen")),
     path("", include("restaurant_kitchen.urls")),
 ]
