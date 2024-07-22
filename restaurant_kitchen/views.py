@@ -36,12 +36,13 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     template_name = "restaurant_kitchen/dish_type_list.html"
     context_object_name = "dish_type_list"
+    paginate_by = 5
 
 
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
     queryset = Dish.objects.select_related("dish_type")
-    paginate_by = 1
+    paginate_by = 5
 
 
 class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
@@ -66,14 +67,49 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
+    paginate_by = 5
 
 
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
+    paginate_by = 5
+
+class CookCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Cook
+    fields = ["username", "first_name", "last_name", "years_of_experience"]
+    success_url = reverse_lazy("restaurant_kitchen:cook-list")
+    template_name = "restaurant_kitchen/cook_form.html"
+
+class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Cook
+    fields = ["username", "first_name", "last_name", "years_of_experience"]
+    success_url = reverse_lazy("restaurant_kitchen:cook-list")
+    template_name = "restaurant_kitchen/cook_form.html"
+
+class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Cook
+    success_url = reverse_lazy("restaurant_kitchen:cook-list")
+    template_name = "restaurant_kitchen/cook_confirm_delete.html"
 
 
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
 
+class DishCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Dish
+    fields = ["name", "description", "price", "dish_type", "cooks"]
+    success_url = reverse_lazy("restaurant_kitchen:dish-list")
+    template_name = "restaurant_kitchen/dish_form.html"
+
+class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Dish
+    fields = ["name", "description", "price", "dish_type", "cooks"]
+    success_url = reverse_lazy("restaurant_kitchen:dish-list")
+    template_name = "restaurant_kitchen/dish_form.html"
+
+class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Dish
+    success_url = reverse_lazy("restaurant_kitchen:dish-list")
+    template_name = "restaurant_kitchen/dish_confirm_delete.html"
 
 
