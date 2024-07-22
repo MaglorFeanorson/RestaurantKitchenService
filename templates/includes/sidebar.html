@@ -1,7 +1,21 @@
-<ul class="sidebar-nav">
-
-  <a href="{% url 'restaurant_kitchen:index' %}" class="btn btn-primary">Home page</a>
-  <a href="{% url 'restaurant_kitchen:cook-list' %}" class="btn btn-primary">All Cooks</a>
-  <a href="{% url 'restaurant_kitchen:dish-list' %}" class="btn btn-primary">All Dishes</a>
-  <a href="{% url 'restaurant_kitchen:dish-type-list' %}" class="btn btn-primary">All Dish Types</a>
-</ul>
+<div class="sidebar">
+  <div class="user-info">
+    {% if user.is_authenticated %}
+      <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
+      <li class="list-group-item">
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-link">Logout</button>
+        </form>
+      </li>
+    {% else %}
+      <li class="list-group-item"><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+    {% endif %}
+  </div>
+  <div class="nav-buttons">
+    <a href="{% url 'restaurant_kitchen:index' %}" class="btn btn-primary">Home page</a>
+    <a href="{% url 'restaurant_kitchen:cook-list' %}" class="btn btn-primary">All Cooks</a>
+    <a href="{% url 'restaurant_kitchen:dish-list' %}" class="btn btn-primary">All Dishes</a>
+    <a href="{% url 'restaurant_kitchen:dish-type-list' %}" class="btn btn-primary">All Dish Types</a>
+  </div>
+</div>
