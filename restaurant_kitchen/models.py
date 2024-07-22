@@ -3,7 +3,7 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.urls import reverse
 
-from RestaurantKitchenService import settings
+from restaurant_kitchen_service import settings
 
 
 class DishType(models.Model):
