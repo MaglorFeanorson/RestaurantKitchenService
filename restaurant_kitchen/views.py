@@ -1,5 +1,8 @@
-from django.http import HttpRequest, HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from .models import (
@@ -8,7 +11,7 @@ from .models import (
     DishType
 )
 
-
+@login_required
 def index(request: HttpRequest) -> HttpResponse:
     """View function for the home page of the site."""
 
@@ -29,22 +32,35 @@ def index(request: HttpRequest) -> HttpResponse:
     return render(request, "restaurant_kitchen/index.html", context=context)
 
 
-class DishTypeListView(generic.ListView):
+class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     template_name = "restaurant_kitchen/dish_type_list.html"
     context_object_name = "dish_type_list"
 
 
-class DishListView(generic.ListView):
+class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
     queryset = Dish.objects.select_related("dish_type")
+    paginate_by = 1
 
-class CookListView(generic.ListView):
+
+class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
+    model = DishType
+    fields = "__all__"
+    success_url = reverse_lazy("restaurant_kitchen:dish-type-list")
+    template_name = "restaurant_kitchen/dish_type_form.html"
+
+
+class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
 
-def dish_detail_view(request: HttpRequest, pk=int) -> HttpResponse:
-    dish = Dish.objects.get(id=pk)
-    context = {
-        "dish": dish,
-    }
-    return render(request, "restaurant_kitchen/dish_detail.html", context=context)
+
+class CookDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Cook
+
+
+class DishDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Dish
+
+
+
