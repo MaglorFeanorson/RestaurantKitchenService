@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator
 from django.db import models
+from django.urls import reverse
+
 from RestaurantKitchenService import settings
 
 
@@ -25,6 +27,9 @@ class Cook(AbstractUser):
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name}"
 
+    def get_absolute_url(self):
+        return reverse("restaurant_kitchen:cook-detail", args=[str(self.id)])
+
 
 class Dish(models.Model):
     name = models.CharField(max_length=255)
@@ -38,3 +43,6 @@ class Dish(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("restaurant_kitchen:dish-detail", args=[str(self.id)])
