@@ -7,7 +7,12 @@ from restaurant_kitchen.models import Cook, Dish
 class CookCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Cook
-        fields = UserCreationForm.Meta.fields + ("username", "first_name", "last_name", "years_of_experience", )
+        fields = UserCreationForm.Meta.fields + (
+            "username",
+            "first_name",
+            "last_name",
+            "years_of_experience",
+        )
 
 
 class DishForm(forms.ModelForm):
@@ -21,6 +26,7 @@ class DishForm(forms.ModelForm):
         model = Dish
         fields = ["name", "description", "price", "dish_type", "cooks"]
 
+
 class DishSearchForm(forms.Form):
     name = forms.CharField(
         max_length=255,
@@ -32,6 +38,7 @@ class DishSearchForm(forms.Form):
             }
         ),
     )
+
 
 class DishFilterForm(forms.Form):
     name = forms.CharField(required=False, label="Name")
@@ -48,6 +55,7 @@ class CookSearchForm(forms.Form):
             }
         ),
     )
+
 
 class DishTypeSearchForm(forms.Form):
     name = forms.CharField(
