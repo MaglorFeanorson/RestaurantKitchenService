@@ -1,16 +1,24 @@
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .forms import CookCreationForm, DishForm, DishSearchForm, DishFilterForm, CookSearchForm, DishTypeSearchForm
-from .models import (
+from restaurant_kitchen.forms import (
+    CookCreationForm,
+    DishForm,
+    DishSearchForm,
+    DishFilterForm,
+    CookSearchForm,
+    DishTypeSearchForm
+)
+from restaurant_kitchen.models import (
     Cook,
     Dish,
     DishType
 )
+
 
 @login_required
 def index(request: HttpRequest) -> HttpResponse:
@@ -127,15 +135,18 @@ class CookListView(LoginRequiredMixin, generic.ListView):
 
         return queryset
 
+
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
     paginate_by = 5
+
 
 class CookCreateView(LoginRequiredMixin, generic.CreateView):
     model = Cook
     success_url = reverse_lazy("restaurant_kitchen:cook-list")
     template_name = "restaurant_kitchen/cook_form.html"
     form_class = CookCreationForm
+
 
 class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Cook
@@ -153,11 +164,13 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
 
+
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
     form_class = DishForm
     success_url = reverse_lazy("restaurant_kitchen:dish-list")
     template_name = "restaurant_kitchen/dish_form.html"
+
 
 class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Dish
@@ -170,5 +183,3 @@ class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Dish
     success_url = reverse_lazy("restaurant_kitchen:dish-list")
     template_name = "restaurant_kitchen/dish_confirm_delete.html"
-
-
