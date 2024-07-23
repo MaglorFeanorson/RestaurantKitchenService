@@ -1,0 +1,302 @@
+[
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 1,
+    "fields": {
+      "name": "Sandwich"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 2,
+    "fields": {
+      "name": "Salad"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 3,
+    "fields": {
+      "name": "Soup"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 4,
+    "fields": {
+      "name": "Pasta"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 5,
+    "fields": {
+      "name": "Pizza"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 6,
+    "fields": {
+      "name": "Dessert"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 7,
+    "fields": {
+      "name": "Drink"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 8,
+    "fields": {
+      "name": "Appetizer"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 9,
+    "fields": {
+      "name": "Main Course"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dishtype",
+    "pk": 10,
+    "fields": {
+      "name": "Side Dish"
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 1,
+    "fields": {
+      "username": "cook1",
+      "first_name": "John",
+      "last_name": "Doe",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 5,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 2,
+    "fields": {
+      "username": "cook2",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 7,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 3,
+    "fields": {
+      "username": "cook3",
+      "first_name": "Mike",
+      "last_name": "Johnson",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 3,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 4,
+    "fields": {
+      "username": "cook4",
+      "first_name": "Anna",
+      "last_name": "Brown",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 10,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 5,
+    "fields": {
+      "username": "cook5",
+      "first_name": "Emily",
+      "last_name": "Davis",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 6,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 6,
+    "fields": {
+      "username": "cook6",
+      "first_name": "Chris",
+      "last_name": "Wilson",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 4,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 7,
+    "fields": {
+      "username": "cook7",
+      "first_name": "Jessica",
+      "last_name": "Taylor",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 8,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 8,
+    "fields": {
+      "username": "cook8",
+      "first_name": "David",
+      "last_name": "Anderson",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 2,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 9,
+    "fields": {
+      "username": "cook9",
+      "first_name": "Sarah",
+      "last_name": "Moore",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 9,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.cook",
+    "pk": 10,
+    "fields": {
+      "username": "cook10",
+      "first_name": "Andrew",
+      "last_name": "Jackson",
+      "password": "pbkdf2_sha256$390000$UdQB29iebZPuoInz4cjz8y$zpISFh/6/Hh/yAfULQoG/A/McBgNk8HZKqRCL4S2lO0=",
+      "years_of_experience": 1,
+      "is_staff": true
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Cheesecake",
+      "description": "Creamy cheesecake with a graham cracker crust and raspberry sauce.",
+      "price": "8.50",
+      "dish_type": 6,
+      "cooks": [1, 2]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 2,
+    "fields": {
+      "name": "Margherita Pizza",
+      "description": "Classic pizza with tomato sauce, mozzarella, and basil.",
+      "price": "12.00",
+      "dish_type": 5,
+      "cooks": [3, 4]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 3,
+    "fields": {
+      "name": "Caesar Salad",
+      "description": "Romaine lettuce, croutons, and Caesar dressing topped with Parmesan cheese.",
+      "price": "7.50",
+      "dish_type": 2,
+      "cooks": [5, 6]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 4,
+    "fields": {
+      "name": "Tomato Soup",
+      "description": "Rich and creamy tomato soup served with a side of croutons.",
+      "price": "6.00",
+      "dish_type": 3,
+      "cooks": [7, 8]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 5,
+    "fields": {
+      "name": "Spaghetti Carbonara",
+      "description": "Classic Italian pasta with creamy egg and pancetta sauce.",
+      "price": "14.00",
+      "dish_type": 4,
+      "cooks": [9, 10]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 6,
+    "fields": {
+      "name": "Grilled Chicken Sandwich",
+      "description": "Grilled chicken breast with lettuce, tomato, and mayo on a toasted bun.",
+      "price": "9.00",
+      "dish_type": 1,
+      "cooks": [1, 2]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 7,
+    "fields": {
+      "name": "Greek Salad",
+      "description": "Mixed greens, tomatoes, cucumbers, olives, feta cheese, and Greek dressing.",
+      "price": "7.50",
+      "dish_type": 2,
+      "cooks": [3, 4]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 8,
+    "fields": {
+      "name": "Lemonade",
+      "description": "Freshly squeezed lemonade with a hint of mint.",
+      "price": "3.50",
+      "dish_type": 7,
+      "cooks": [5, 6]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 9,
+    "fields": {
+      "name": "Mozzarella Sticks",
+      "description": "Fried mozzarella sticks served with marinara sauce.",
+      "price": "5.50",
+      "dish_type": 8,
+      "cooks": [7, 8]
+    }
+  },
+  {
+    "model": "restaurant_kitchen.dish",
+    "pk": 10,
+    "fields": {
+      "name": "Roasted Vegetables",
+      "description": "Seasonal vegetables roasted to perfection with olive oil and herbs.",
+      "price": "6.50",
+      "dish_type": 10,
+      "cooks": [9, 10]
+    }
+  }
+]
