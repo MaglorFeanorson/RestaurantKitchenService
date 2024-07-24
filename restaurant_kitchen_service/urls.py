@@ -1,5 +1,5 @@
 """
-URL configuration for RestaurantKitchenService project.
+URL configuration for restaurant_kitchen_service project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,8 +16,12 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
+from restaurant_kitchen.views import index
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", include("restaurant_kitchen.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
